@@ -1,1 +1,0 @@
-# zzynnwa.github.io
