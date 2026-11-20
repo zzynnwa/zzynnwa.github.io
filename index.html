@@ -94,7 +94,7 @@ header{transition:box-shadow .3s}header.sc{box-shadow:0 4px 18px rgba(217,82,10,
 }
 .hl{background:linear-gradient(var(--brass),var(--brass)) 0 92%/100% .12em no-repeat}
 .marq{background:var(--accent);color:var(--accent-ink);overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
-.mt{display:inline-flex}.mt span{padding:0 22px}.mt span::after{content:"✦";margin-left:44px;opacity:.7}
+.mt{display:flex;width:max-content;will-change:transform}.mt span{padding:0 22px;flex:none}.mt span::after{content:"✦";margin-left:44px;opacity:.7}
 ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .steps li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
 .steps li:hover{border-color:var(--accent);box-shadow:0 10px 24px rgba(217,82,10,.15)}
@@ -106,6 +106,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:r
 .marq.big:hover{color:var(--brass)}
 .big .mt span{padding:0 .4em}.big .mt span::after{margin-left:.8em}
 .marq.tel{background:var(--ink);color:var(--bg);text-transform:none;font-size:16px}
+@keyframes mqx{to{transform:translateX(-50%)}}
+.marq .mt{animation:mqx 34s linear infinite}.marq.tel .mt{animation-duration:30s}.marq:hover .mt{animation-play-state:paused}
 @media (max-width:900px){ol.steps{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){ol.steps{grid-template-columns:1fr}}
 </style>
