@@ -102,6 +102,11 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:r
 .steps h3{margin:0 0 6px;font-size:19px}.steps p{margin:0;color:var(--muted);font-size:16px}
 .fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#ff7a00;color:#fff;display:grid;place-items:center;z-index:6;box-shadow:0 8px 20px rgba(217,82,10,.35)}
 .fab svg{width:26px;height:26px;fill:currentColor}
+.logo{display:inline-flex;align-items:center;gap:12px}
+.emb{height:40px;width:auto;display:block;color:var(--ink)}
+.foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.foot .emb{height:44px}
+@media (max-width:420px){.logo{font-size:15px;gap:8px}.emb{height:32px}}
+
 .marq.big{background:transparent;color:transparent;-webkit-text-stroke:1.5px var(--brass);font-size:clamp(44px,9vw,104px);line-height:1.1;letter-spacing:.01em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:color .3s}
 .marq.big:hover{color:var(--brass)}
 .big .mt span{padding:0 .4em}.big .mt span::after{margin-left:.8em}
@@ -113,8 +118,10 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:r
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="emb" viewBox="0 0 155.3 49" fill="currentColor"><rect x="15.6" y="0" width="124.3" height="3.5"/><g fill="none" stroke="currentColor"><g id="pan"><path d="M2.85 28.45L16.75 2.2L30.65 28.45" stroke-width="2.0" stroke-miterlimit="8"/><path d="M1.4 28.45H32.1" stroke-width="1.7"/><path d="M1.4 28.45A15.35 14.85 0 0 0 32.1 28.45" stroke-width="1.8"/></g><use href="#pan" x="121.8"/></g><path d="M41.1 22.48C45.51 22.48 48.85 19.32 48.85 13.51C48.85 7.67 45.43 4.52 41.1 4.52C37.09 4.52 34.2 6.92 33.8 11.14H38.22C38.46 9.37 39.35 8.61 41.14 8.61C42.84 8.61 43.83 9.6 44.2 11.54H39.37V15.27H44.24C43.9 17.42 42.89 18.39 41.16 18.39C39.39 18.39 38.45 17.63 38.2 15.86H33.77C33.99 18.84 36.38 22.48 41.1 22.48ZM56.36 9.28H51.65V21.35H56.36V16.91H60.14V21.35H64.85V9.28H60.14V13.67H56.36ZM73.78 22.48C76.82 22.48 78.82 20.95 79.43 18.52L75.66 17.89C75.4 18.64 74.74 19.06 73.87 19.06C72.69 19.06 71.9 18.26 71.85 16.59H79.6V15.48C79.6 11.16 77.28 8.53 73.68 8.53C69.99 8.53 67.65 11.31 67.65 15.5C67.65 19.88 69.96 22.48 73.78 22.48ZM71.88 13.93C72.01 12.64 72.63 11.94 73.72 11.94C74.81 11.94 75.44 12.64 75.56 13.93ZM82.53 26.98H86.67V19.81H86.74C87.21 21.17 88.31 22.17 89.93 22.17C92.4 22.17 94.47 19.95 94.47 15.36C94.47 10.54 92.26 8.52 89.98 8.52C88.26 8.52 87.18 9.67 86.74 11.02H86.63V8.69H82.53ZM88.41 18.5C87.27 18.5 86.57 17.29 86.57 15.36C86.57 13.38 87.27 12.19 88.41 12.19C89.55 12.19 90.2 13.38 90.2 15.36C90.2 17.32 89.55 18.5 88.41 18.5ZM105.85 9.28H97.28V21.35H101.47V12.52H105.85ZM116.44 22.48C120.72 22.48 124.1 19.34 124.1 13.51C124.1 7.67 120.72 4.52 116.44 4.52C112.13 4.52 108.78 7.67 108.78 13.51C108.78 19.31 112.13 22.48 116.44 22.48ZM116.44 18.35C114.32 18.35 113.18 16.64 113.18 13.51C113.18 10.37 114.32 8.65 116.44 8.65C118.56 8.65 119.7 10.37 119.7 13.51C119.7 16.64 118.56 18.35 116.44 18.35ZM35.65 42.98H41.07V35.7C41.07 34.31 40.93 31.19 40.88 28.51C41.53 31.28 42.34 34.22 42.82 35.7L45.16 42.98H49.62L51.92 35.7C52.41 34.17 53.24 31.06 53.88 28.19C53.83 30.93 53.68 34.26 53.68 35.7V42.98H59.1V24.15H50.61L48.86 30.04C48.45 31.41 47.85 34.31 47.39 36.77C46.94 34.31 46.31 31.41 45.9 30.04L44.12 24.15H35.65ZM71.53 42.98C75.74 42.98 78.52 41.42 79.36 38.94L74.13 38.3C73.78 39.07 72.86 39.5 71.65 39.5C70.01 39.5 68.92 38.69 68.85 36.98H79.6V35.85C79.6 31.46 76.38 28.77 71.39 28.77C66.28 28.77 63.02 31.61 63.02 35.88C63.02 40.34 66.23 42.98 71.53 42.98ZM68.89 34.27C69.07 32.97 69.94 32.25 71.45 32.25C72.95 32.25 73.82 32.97 74 34.27ZM83.65 48.73H89.36V40.98H89.45C90.1 42.44 91.62 43.53 93.85 43.53C97.24 43.53 100.1 41.13 100.1 36.16C100.1 30.95 97.05 28.77 93.91 28.77C91.55 28.77 90.06 30.01 89.45 31.48H89.3V28.96H83.65ZM91.75 39.56C90.18 39.56 89.22 38.25 89.22 36.16C89.22 34.03 90.18 32.74 91.75 32.74C93.32 32.74 94.22 34.03 94.22 36.16C94.22 38.29 93.32 39.56 91.75 39.56ZM103.03 42.98H109.23L110.35 39.36H116.64L117.82 42.98H124.1L117.23 24.15H109.65ZM111.53 35.55C112.25 33.25 112.82 30.8 113.38 28.33C114 30.8 114.66 33.25 115.4 35.55Z"/></symbol></svg>
+
 <header><div class="wrap">
-<a class="logo" href="#top">ЭНЕРГОМЕРА ВЕСЫ</a>
+<a class="logo" href="#top"><svg class="emb" role="img" aria-label="Эмблема Энергомера" viewBox="0 0 155.3 49" width="127" height="40"><use href="#emb"/></svg><span>ЭНЕРГОМЕРА ВЕСЫ</span></a>
 <nav aria-label="Разделы"><a href="#service">Сервис</a><a href="#contacts">Контакты</a></nav>
 </div></header>
 <main id="top">
@@ -159,7 +166,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:r
 </main>
 <div class="marq tel" aria-hidden="true"><div class="mt"><span>Звоните: +7 920 100-20-69</span><span>+7 905 130-89-63</span><span>+7 910 829-22-66</span><span>emera@list.ru</span><span>Ответим в рабочее время и не только</span><span>Звоните: +7 920 100-20-69</span><span>+7 905 130-89-63</span><span>+7 910 829-22-66</span><span>emera@list.ru</span><span>Ответим в рабочее время и не только</span></div></div>
 <a class="fab" href="tel:+79201002069" aria-label="Позвонить"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></a>
-<footer><div class="wrap">© 2026 ООО «Энергомера Весы». Все права защищены.</div></footer>
+<footer><div class="wrap foot"><svg class="emb" role="img" aria-label="Эмблема Энергомера" viewBox="0 0 155.3 49" width="127" height="40"><use href="#emb"/></svg><span>© 2026 ООО «Энергомера Весы». Все права защищены.</span></div></footer>
 <script>
 (function(){
 var d=document.documentElement;d.classList.add('js');
